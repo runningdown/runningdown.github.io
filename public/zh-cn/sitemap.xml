@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://runningdown.github.io/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -15,8 +15,13 @@
                 href="https://runningdown.github.io/"
                 />
   </url><url>
+    <loc>https://runningdown.github.io/archives/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://runningdown.github.io/page/</loc>
+    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://runningdown.github.io/categories/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -27,26 +32,6 @@
                 hreflang="zh-cn"
                 href="https://runningdown.github.io/categories/"
                 />
-  </url><url>
-    <loc>https://runningdown.github.io/p/test-chinese/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://runningdown.github.io/post/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://runningdown.github.io/categories/test/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://runningdown.github.io/categories/%E6%B5%8B%E8%AF%95/</loc>
-    <lastmod>2020-09-09T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://runningdown.github.io/archives/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://runningdown.github.io/page/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
-  </url><url>
-    <loc>https://runningdown.github.io/p/</loc>
   </url><url>
     <loc>https://runningdown.github.io/links/</loc>
   </url><url>
@@ -63,6 +48,8 @@
                 hreflang="zh-cn"
                 href="https://runningdown.github.io/tags/"
                 />
+  </url><url>
+    <loc>https://runningdown.github.io/categories/test/</loc>
   </url><url>
     <loc>https://runningdown.github.io/%E5%85%B3%E4%BA%8E/</loc>
   </url>
