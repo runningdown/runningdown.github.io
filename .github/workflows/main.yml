@@ -17,7 +17,7 @@ jobs:
       
       - uses: "finnp/create-file-action@master"
         env:
-          FILE_NAME: "./CNAME"
+          FILE_NAME: "./public/CNAME"
           FILE_DATA: "blog.rm-rf.icu"
 
       - name: Setup Hugo
