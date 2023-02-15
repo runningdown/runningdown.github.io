@@ -14,6 +14,11 @@ jobs:
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+      
+      - uses: "finnp/create-file-action@master"
+        env:
+          FILE_NAME: "./CNAME"
+          FILE_DATA: "blog.rm-rf.icu"
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
