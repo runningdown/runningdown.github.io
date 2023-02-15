@@ -1,4 +1,4 @@
-baseurl: https://blog.rm-rf.icu/
+#baseurl: https://blogrm-rf.icu
 languageCode: zh-cn
 theme: hugo-theme-stack
 paginate: 5
