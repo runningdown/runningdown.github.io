@@ -1,4 +1,4 @@
-baseurl: https://runningdown.github.io/
+baseurl: https://blog.rm-rf.icu/
 languageCode: zh-cn
 theme: hugo-theme-stack
 paginate: 5
