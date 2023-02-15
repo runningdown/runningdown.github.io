@@ -1,5 +1,5 @@
-baseurl: https://example.com
-languageCode: en-us
+baseurl: https://runningdown.github.io
+languageCode: zh-cn
 theme: hugo-theme-stack
 paginate: 5
 title: Example Site
