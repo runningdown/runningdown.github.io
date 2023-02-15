@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://runningdown.github.io/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
     <xhtml:link
                 rel="alternate"
                 hreflang="en"
@@ -19,7 +19,10 @@
     <lastmod>2019-05-28T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://runningdown.github.io/page/</loc>
-    <lastmod>2019-05-28T00:00:00+00:00</lastmod>
+    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://runningdown.github.io/about/</loc>
+    <lastmod>2020-10-09T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://runningdown.github.io/categories/</loc>
     <xhtml:link
@@ -32,8 +35,6 @@
                 hreflang="zh-cn"
                 href="https://runningdown.github.io/categories/"
                 />
-  </url><url>
-    <loc>https://runningdown.github.io/links/</loc>
   </url><url>
     <loc>https://runningdown.github.io/search/</loc>
   </url><url>
@@ -48,9 +49,5 @@
                 hreflang="zh-cn"
                 href="https://runningdown.github.io/tags/"
                 />
-  </url><url>
-    <loc>https://runningdown.github.io/categories/test/</loc>
-  </url><url>
-    <loc>https://runningdown.github.io/%E5%85%B3%E4%BA%8E/</loc>
   </url>
 </urlset>
