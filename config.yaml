@@ -61,7 +61,7 @@ params:
         toc: true
         readingTime: true
         license:
-            enabled: true
+            enabled: false
             default: Licensed under CC BY-NC-SA 4.0
 
     comments:
@@ -175,7 +175,7 @@ params:
         toggle: true
 
         # Available values: auto, light, dark
-        default: dark
+        default: light
 
     imageProcessing:
         cover:
