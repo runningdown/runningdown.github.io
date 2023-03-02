@@ -1,4 +1,37 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>T1ck1ng's Blog</title><link>https://blog.rm-rf.icu/</link><description>Recent content on T1ck1ng's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Wed, 09 Feb 2022 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.rm-rf.icu/index.xml" rel="self" type="application/rss+xml"/><item><title>CVE-2021-42287_域提权漏洞分析</title><link>https://blog.rm-rf.icu/p/cve-2021-42287_%E5%9F%9F%E6%8F%90%E6%9D%83%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/</link><pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate><guid>https://blog.rm-rf.icu/p/cve-2021-42287_%E5%9F%9F%E6%8F%90%E6%9D%83%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/</guid><description>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220118141506204.png" alt="Featured image of post CVE-2021-42287_域提权漏洞分析" />&lt;h1 id="cve-2021-42287">CVE-2021-42287&lt;/h1>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>T1ck1ng's Blog</title><link>https://blog.rm-rf.icu/</link><description>Recent content on T1ck1ng's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Thu, 02 Mar 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://blog.rm-rf.icu/index.xml" rel="self" type="application/rss+xml"/><item><title>SQLMAP连接问题</title><link>https://blog.rm-rf.icu/p/sqlmap%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/</link><pubDate>Thu, 02 Mar 2023 00:00:00 +0000</pubDate><guid>https://blog.rm-rf.icu/p/sqlmap%E8%BF%9E%E6%8E%A5%E9%97%AE%E9%A2%98/</guid><description>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20230302195439003.png" alt="Featured image of post SQLMAP连接问题" />&lt;h2 id="0x01-背景">0x01 背景&lt;/h2>
+&lt;p>某次遇到sqlmap无法连接target的问题，但是使用chrome可以正常访问，关于报错信息大部分如下图，意思是无法与target连接，但是使用浏览器可以正常访问target，甚至说在burp里使用payload也可以正常执行。&lt;/p>
+&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20230302195439003.png"
+loading="lazy"
+alt="image-20230302195439003"
+>&lt;/p>
+&lt;h2 id="0x02-开始">0x02 开始&lt;/h2>
+&lt;p>刚开始遇到无法连接目标的问题的时候。还以为是请求过高导致宕机，或者是被banip，所以降低请求频率、更换代理节点等等措施都使用过，但是依旧无效。&lt;/p>
+&lt;p>于是重新翻请求，发现存在如下图所示信息&lt;/p>
+&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20230302200407588.png"
+loading="lazy"
+alt="image-20230302200407588"
+>&lt;/p>
+&lt;p>意为我在POST中对参数进行了标记，sqlmap将对这个参数进行测试。但是问题来了，在POST请求中我并没有进行标记，如下图所示，仔细观察发现在header中存在两个星号&lt;/p>
+&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20230302200816820.png"
+loading="lazy"
+alt="image-20230302200816820"
+>&lt;/p>
+&lt;p>也就是说sqlmap会把header中的星号当作POST参数进行注入（因为有设置对header的测试，所以刚开始并没有觉得有什么不对），接下来在sqlmap中使用**-v 5&lt;strong>将日志信息调到最详细，可以看到的确如此，从&lt;/strong>Accept**开始就被sqlmap当作POST数据包进行测试。&lt;/p>
+&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20230302201057195.png"
+loading="lazy"
+alt="image-20230302201057195"
+>&lt;/p>
+&lt;h2 id="0x03-解决">0x03 解决&lt;/h2>
+&lt;p>那么开始解决这个问题，首先这里说结论，是&lt;strong>Content-Length&lt;/strong>的锅，删除即可。&lt;/p>
+&lt;p>最开始以为是Windows换行符的问题，于是将请求包从Windows复制到Linux重新测试，但是依旧无法解决。&lt;/p>
+&lt;p>之后以为是SQLMAP的问题，更换最新版本或者切换旧版本依旧无法解决。&lt;/p>
+&lt;p>最后依次删除header进行测试，定位到&lt;strong>Content-Length&lt;/strong>，删掉让SQLMAP自动补全一个即可。&lt;/p>
+&lt;h2 id="0x04后续">0x04后续&lt;/h2>
+&lt;p>这个问题特别有意思，在此记录一下，另外测试如果把&lt;strong>Content-Length&lt;/strong>放到header的最后面可不可以解决问题呢？测试一下，发现SQLMAP重新在POST参数前加上了**%0A%0A**，所以还是重新生成或者加大数值靠谱一点。&lt;/p>
+&lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20230302202408680.png"
+loading="lazy"
+alt="image-20230302202408680"
+>&lt;/p></description></item><item><title>CVE-2021-42287_域提权漏洞分析</title><link>https://blog.rm-rf.icu/p/cve-2021-42287_%E5%9F%9F%E6%8F%90%E6%9D%83%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/</link><pubDate>Wed, 09 Feb 2022 00:00:00 +0000</pubDate><guid>https://blog.rm-rf.icu/p/cve-2021-42287_%E5%9F%9F%E6%8F%90%E6%9D%83%E6%BC%8F%E6%B4%9E%E5%88%86%E6%9E%90/</guid><description>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20220118141506204.png" alt="Featured image of post CVE-2021-42287_域提权漏洞分析" />&lt;h1 id="cve-2021-42287">CVE-2021-42287&lt;/h1>
 &lt;h2 id="0x01-kerberos认证过程">0x01 Kerberos认证过程&lt;/h2>
 &lt;div class="highlight">&lt;div class="chroma">
 &lt;table class="lntable">&lt;tr>&lt;td class="lntd">
