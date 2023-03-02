@@ -16,7 +16,7 @@ alt="image-20230302200407588"
 loading="lazy"
 alt="image-20230302200816820"
 >&lt;/p>
-&lt;p>也就是说sqlmap会把header中的星号当作POST参数进行注入（因为有设置对header的测试，所以刚开始并没有觉得有什么不对），接下来在sqlmap中使用**-v 5&lt;strong>将日志信息调到最详细，可以看到的确如此，从&lt;/strong>Accept**开始就被sqlmap当作POST数据包进行测试。&lt;/p>
+&lt;p>也就是说sqlmap会把header中的星号当作POST参数进行注入（因为有设置对header的测试，所以刚开始并没有觉得有什么不对），接下来在sqlmap中使用 &lt;strong>-v 5&lt;/strong> 将日志信息调到最详细，可以看到的确如此，从 &lt;strong>Accept&lt;/strong> 开始就被sqlmap当作POST数据包进行测试。&lt;/p>
 &lt;p>&lt;img src="https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20230302201057195.png"
 loading="lazy"
 alt="image-20230302201057195"
