@@ -48,7 +48,7 @@ categories:
 
 ## 0x04后续
 
-这个问题特别有意思，在此记录一下，另外测试如果把**Content-Length**放到header的最后面可不可以解决问题呢？测试一下，发现SQLMAP重新在POST参数前加上了**%0A%0A**，所以还是重新生成或者加大数值靠谱一点。
+这个问题特别有意思，在此记录一下，另外测试如果把**Content-Length**放到header的最后面可不可以解决问题呢？测试一下，发现SQLMAP重新在POST参数前加上了 **%0A%0A** ，所以还是重新生成或者加大数值靠谱一点。
 
 ![image-20230302202408680](https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20230302202408680.png)
 
