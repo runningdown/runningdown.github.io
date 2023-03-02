@@ -32,7 +32,7 @@ categories:
 
 ![image-20230302200816820](https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20230302200816820.png)
 
-也就是说sqlmap会把header中的星号当作POST参数进行注入（因为有设置对header的测试，所以刚开始并没有觉得有什么不对），接下来在sqlmap中使用**-v 5**将日志信息调到最详细，可以看到的确如此，从**Accept**开始就被sqlmap当作POST数据包进行测试。
+也就是说sqlmap会把header中的星号当作POST参数进行注入（因为有设置对header的测试，所以刚开始并没有觉得有什么不对），接下来在sqlmap中使用 **-v 5** 将日志信息调到最详细，可以看到的确如此，从 **Accept** 开始就被sqlmap当作POST数据包进行测试。
 
 ![image-20230302201057195](https://typora-mine.oss-cn-beijing.aliyuncs.com/typora/image-20230302201057195.png)
 
